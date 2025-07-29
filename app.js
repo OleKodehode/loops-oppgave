@@ -92,6 +92,25 @@ let combinedAge = 0;
 
 let averageAge = 0;
 
+const getRandomCity = () => {
+  return cities[Math.floor(Math.random() * cities.length)];
+};
+
+for (person of people) {
+  if (person.name == "Otto") continue;
+  person.city = getRandomCity();
+  person.title = person.male ? "Mr." : "Ms.";
+  person.age += 2;
+  person.hobbies.unshift("coding");
+  combinedAge += person.age;
+}
+// Man skulle hopppe over Otto, så minus 1 for å få gjennomsnittsalder på alle som var telt.
+// Math.round for å få et rundt tall
+averageAge = Math.round(combinedAge / (people.length - 1));
+
+console.log(averageAge);
+console.log(people);
+
 /******************************************************************************
 2.
 
@@ -114,6 +133,21 @@ diceRoller(5, 20) skal returnere et array med 5 tilfeldige tall fra 1-20.
 
 // Skriv koden for oppgave 2 her
 
+const getRandomDice = (sides) => Math.ceil(Math.random() * sides);
+function diceRoller(numb, diceSides = 6) {
+  const diceRolls = [];
+  let count = 0;
+
+  while (count < numb) {
+    diceRolls.push(getRandomDice(diceSides));
+    count++;
+  }
+
+  return diceRolls;
+}
+
+console.log(diceRoller(4));
+console.log(diceRoller(5, 20));
 /******************************************************************************
 3.
 
