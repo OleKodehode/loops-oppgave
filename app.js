@@ -175,6 +175,21 @@ skal returnere:
 
 // Skriv koden for oppgave 3 her
 
+const testArr = [" thIS", "teXt  ", " nEeds ", "to", "BE", "cleANED   ", " Up"];
+
+function cleanUpArray(arr) {
+  const cleanedArr = [];
+
+  for (word of arr) {
+    word = word.trim().toLowerCase();
+    cleanedArr.push(word);
+  }
+
+  return cleanedArr.join(" ");
+}
+
+console.log(cleanUpArray(testArr));
+
 /******************************************************************************
 4.
 
