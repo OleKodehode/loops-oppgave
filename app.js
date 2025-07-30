@@ -132,6 +132,7 @@ diceRoller(5, 20) skal returnere et array med 5 tilfeldige tall fra 1-20.
 // Skriv koden for oppgave 2 her
 
 const getRandomDice = (sides) => Math.ceil(Math.random() * sides);
+
 function diceRoller(numb, diceSides = 6) {
   const diceRolls = [];
   let count = 0;
@@ -176,7 +177,17 @@ skal returnere:
 const testArr = [" thIS", "teXt  ", " nEeds ", "to", "BE", "cleANED   ", " Up"];
 
 function cleanUpArray(arr) {
-  return arr.map((e) => e.trim().toLowerCase()).join(" ");
+  // hadde kanskje vært bedre å brukt map, men oppgaven sa spesifikt å bruke for of
+  // return arr.map((e) => e.trim().toLowerCase()).join(" ");
+
+  const cleanedArr = [];
+
+  for (word of arr) {
+    word = word.trim().toLowerCase();
+    cleanedArr.push(word);
+  }
+
+  return cleanedArr.join(" ");
 }
 
 console.log(cleanUpArray(testArr));
