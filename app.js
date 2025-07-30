@@ -92,17 +92,15 @@ let combinedAge = 0;
 
 let averageAge = 0;
 
-const getRandomCity = () => {
-  return cities[Math.floor(Math.random() * cities.length)];
-};
+const getRandomCity = () => cities[Math.floor(Math.random() * cities.length)];
 
-for (person of people) {
-  if (person.name == "Otto") continue;
-  person.city = getRandomCity();
-  person.title = person.male ? "Mr." : "Ms.";
-  person.age += 2;
-  person.hobbies.unshift("coding");
-  combinedAge += person.age;
+for (let i = 0; i < people.length; i++) {
+  if (people[i].name == "Otto") continue;
+  people[i].city = getRandomCity();
+  people[i].title = people[i].male ? "Mr." : "Ms.";
+  people[i].age += 2;
+  people[i].hobbies.unshift("coding");
+  combinedAge += people[i].age;
 }
 // Man skulle hopppe over Otto, så minus 1 for å få gjennomsnittsalder på alle som var telt.
 // Math.round for å få et rundt tall
