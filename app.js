@@ -176,14 +176,7 @@ skal returnere:
 const testArr = [" thIS", "teXt  ", " nEeds ", "to", "BE", "cleANED   ", " Up"];
 
 function cleanUpArray(arr) {
-  const cleanedArr = [];
-
-  for (word of arr) {
-    word = word.trim().toLowerCase();
-    cleanedArr.push(word);
-  }
-
-  return cleanedArr.join(" ");
+  return arr.map((e) => e.trim().toLowerCase()).join(" ");
 }
 
 console.log(cleanUpArray(testArr));
@@ -215,18 +208,18 @@ skal returnere "whao is ohe ptino tf ohis?"
 
 function doubleSwap(string, charA, charB) {
   // Skriv koden for oppgave 4 her
-  const newString = [];
+  let newString = "";
 
   for (letter of string) {
     if (letter == charA) {
-      newString.push(charB);
+      newString += charB;
     } else if (letter == charB) {
-      newString.push(charA);
+      newString += charA;
     } else {
-      newString.push(letter);
+      newString += letter;
     }
   }
-  return newString.join("");
+  return newString;
 }
 
 console.log(doubleSwap("what is the point of this?", "o", "t"));
