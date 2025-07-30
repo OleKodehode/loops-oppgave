@@ -215,7 +215,21 @@ skal returnere "whao is ohe ptino tf ohis?"
 
 function doubleSwap(string, charA, charB) {
   // Skriv koden for oppgave 4 her
+  const newString = [];
+
+  for (letter of string) {
+    if (letter == charA) {
+      newString.push(charB);
+    } else if (letter == charB) {
+      newString.push(charA);
+    } else {
+      newString.push(letter);
+    }
+  }
+  return newString.join("");
 }
+
+console.log(doubleSwap("what is the point of this?", "o", "t"));
 
 /******************************************************************************
 5.
