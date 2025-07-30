@@ -230,6 +230,7 @@ function doubleSwap(string, charA, charB) {
       newString += letter;
     }
   }
+
   return newString;
 }
 
@@ -278,3 +279,34 @@ const greetings = [
 ];
 
 // Skriv koden for oppgave 5 her
+
+function helloChecker(str) {
+  const regexArr = [
+    /hello/gi,
+    /ciao/gi,
+    /salut/gi,
+    /hallo/gi,
+    /hola/gi,
+    /cze..\s/gi,
+  ];
+  const languageArr = [
+    "Engelsk",
+    "Italiensk",
+    "Fransk",
+    "Tysk",
+    "Spansk",
+    "Polsk",
+  ];
+
+  for (let i = 0; i < regexArr.length; i++) {
+    if (regexArr[i].test(str)) {
+      return `HELLO oppdaget på ${languageArr[i]}.`;
+    }
+  }
+
+  return "Ingen HELLO oppdaget.";
+}
+
+for (word of greetings) {
+  console.log(helloChecker(word));
+}
