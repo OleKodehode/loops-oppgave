@@ -287,7 +287,7 @@ function helloChecker(str) {
     /salut/gi,
     /hallo/gi,
     /hola/gi,
-    /cze..\s/gi,
+    /cze(sc|ść)/gi,
   ];
   const languageArr = [
     "Engelsk",
