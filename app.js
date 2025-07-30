@@ -281,26 +281,43 @@ const greetings = [
 // Skriv koden for oppgave 5 her
 
 function helloChecker(str) {
-  const regexArr = [
-    /hello/gi,
-    /ciao/gi,
-    /salut/gi,
-    /hallo/gi,
-    /hola/gi,
-    /cze(sc|ść)/gi,
-  ];
-  const languageArr = [
-    "Engelsk",
-    "Italiensk",
-    "Fransk",
-    "Tysk",
-    "Spansk",
-    "Polsk",
-  ];
+  // const regexArr = [
+  //   /hello/gi,
+  //   /ciao/gi,
+  //   /salut/gi,
+  //   /hallo/gi,
+  //   /hola/gi,
+  //   /cze(sc|ść)/gi,
+  // ];
+  // const languageArr = [
+  //   "Engelsk",
+  //   "Italiensk",
+  //   "Fransk",
+  //   "Tysk",
+  //   "Spansk",
+  //   "Polsk",
+  // ];
 
-  for (let i = 0; i < regexArr.length; i++) {
-    if (regexArr[i].test(str)) {
-      return `HELLO oppdaget på ${languageArr[i]}.`;
+  // for (let i = 0; i < regexArr.length; i++) {
+  //   if (regexArr[i].test(str)) {
+  //     return `HELLO oppdaget på ${languageArr[i]}.`;
+  //   }
+  // }
+
+  // return "Ingen HELLO oppdaget.";
+
+  const languageObj = {
+    Engelsk: /hello/gi,
+    Italiensk: /ciao/gi,
+    Fransk: /salut/gi,
+    Tysk: /hallo/gi,
+    Spansk: /hola/gi,
+    Polsk: /cze(sc|ść)/gi,
+  };
+
+  for (let [lang, greet] of Object.entries(languageObj)) {
+    if (greet.test(str)) {
+      return `HELLO oppdaget på ${lang}.`;
     }
   }
 
